@@ -1,5 +1,15 @@
 # python-azure-ai-textanalytics
 
+Este proyecto es un **ejercicio didáctico** desarrollado en Python que utiliza el **SDK oficial de Azure AI Text Analytics** para detectar el idioma de un texto ingresado por el usuario desde consola.
+
+⚠️ **Importante**
+El código de este repositorio fue **tomado y adaptado del curso oficial de Microsoft**:
+
+**AI-102: Designing and Implementing a Microsoft Azure AI Solution**
+<https://microsoftlearning.github.io/AI-102-AIEngineer/>
+
+Este repositorio **no tiene fines comerciales ni productivos** y existe únicamente con **propósitos educativos y de aprendizaje**.
+
 ## 1\. ¿Qué hace este programa en general?
 
 Este programa:
@@ -250,3 +260,32 @@ Este código te enseña varios conceptos fundamentales:
 - Control de errores con `try / except`
 - Interacción con el usuario (`input`)
 - Bucles (`while`)
+
+## 📦 9\. Instalación y ejecución con Poetry
+
+### a\. Clonar el repositorio
+
+```bash
+git clone https://github.com/wiltrovira/python-azure-ai-textanalytics
+cd python-azure-ai-textanalytics
+```
+
+### b\. Instalar dependencias
+
+```bash
+poetry install
+```
+
+### c\. Ejecutar validaciones de calidad del código
+
+Ejecuta todas las validaciones automáticas de calidad de código definidas en tu proyecto, usando el entorno virtual gestionado por Poetry.
+
+```bash
+poetry run pre-commit run --all-files
+```
+
+### d\. Ejecutar el programa
+
+```bash
+poetry run python src/python-azure-ai-textanalytics/main.py
+```
