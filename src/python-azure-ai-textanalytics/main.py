@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
 import os
+from pathlib import Path
+
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
@@ -10,7 +12,9 @@ def main():
 
     try:
         # Obtiene configuraciones del archivo .env
-        load_dotenv()
+        ENV_PATH = Path(__file__).resolve().parent / ".env"
+        load_dotenv(dotenv_path=ENV_PATH)
+
         cog_endpoint = os.getenv("COG_SERVICE_ENDPOINT")
         cog_key = os.getenv("COG_SERVICE_KEY")
 
@@ -18,7 +22,7 @@ def main():
         userText = ""
         while userText.lower() != "salir":
             userText = input(
-                '\nEscribe un texto ("salir" para detener la ejecución del programa)\n'
+                '\nEscribe un texto ("salir" para detener la ejecución del programa:)\n'
             )
             if userText.lower() != "salir":
                 language = GetLanguage(userText)
